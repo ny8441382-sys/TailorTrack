@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Status - Tailor Track</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="top-header">
+
+        <button class="menu-btn" onclick="history.back()">←</button>
+
+        <h1>Order Status</h1>
+
+        <div></div>
+
+    </header>
+
+
+    <main class="order-container">
+
+        <!-- Order Information -->
+        <section class="order-card">
+
+            <div class="order-header">
+                <div>
+                    <h2 id="orderClothing">Shirt & Pant</h2>
+                    <p>Order #TT001</p>
+                </div>
+
+                <span class="progress">In Progress</span>
+            </div>
+
+            <div class="order-info">
+                <p><strong>Customer:</strong> <span id="orderCustomerName">Rahul Sharma</span></p>
+                <p><strong>Delivery:</strong> <span id="orderDelivery">20 Aug 2026</span></p>
+                <p><strong>Amount:</strong> ₹<span id="orderAmount">1500</span></p>
+            </div>
+
+        </section>
+
+
+        <!-- Progress Timeline -->
+        <section class="timeline-card">
+
+            <h2>Order Progress</h2>
+
+            <div class="timeline">
+
+                <!-- Step 1 -->
+                <div class="timeline-item completed-step">
+
+                    <div class="timeline-dot">✓</div>
+
+                    <div class="timeline-content">
+                        <h3>Order Placed</h3>
+                        <p>Order has been received</p>
+                    </div>
+
+                </div>
+
+
+                <!-- Step 2 -->
+                <div class="timeline-item completed-step">
+
+                    <div class="timeline-dot">✓</div>
+
+                    <div class="timeline-content">
+                        <h3>Measurement Done</h3>
+                        <p>Customer measurements recorded</p>
+                    </div>
+
+                </div>
+
+
+                <!-- Step 3 -->
+                <div class="timeline-item active-step">
+
+                    <div class="timeline-dot">3</div>
+
+                    <div class="timeline-content">
+                        <h3>Stitching</h3>
+                        <p>Order is currently being stitched</p>
+                    </div>
+
+                </div>
+
+
+                <!-- Step 4 -->
+                <div class="timeline-item">
+
+                    <div class="timeline-dot">4</div>
+
+                    <div class="timeline-content">
+                        <h3>Ready for Delivery</h3>
+                        <p>Order will be ready soon</p>
+                    </div>
+
+                </div>
+
+
+                <!-- Step 5 -->
+                <div class="timeline-item">
+
+                    <div class="timeline-dot">5</div>
+
+                    <div class="timeline-content">
+                        <h3>Delivered</h3>
+                        <p>Order delivered to customer</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Update Button -->
+        <button class="update-btn">
+            Update Order Status
+        </button>
+
+    </main>
+
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+
+        <div class="nav-item">
+            <span>⌂</span>
+            <p>Home</p>
+        </div>
+
+        <div class="nav-item active">
+            <span>♟</span>
+            <p>Customers</p>
+        </div>
+
+        <div class="nav-item">
+            <span>●</span>
+            <p>Profile</p>
+        </div>
+
+    </nav>
+
+
+    <footer>
+        <p>Developed by Nidhi Yadav</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

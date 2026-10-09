@@ -1,0 +1,633 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222;
+    max-width: 480px;
+    margin: auto;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+/* Top Header */
+.top-header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 22px 10px;
+}
+
+.top-header h1 {
+    color: #6946c6;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.menu-btn,
+.notification-btn {
+    border: none;
+    background: transparent;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.notification-btn {
+    font-size: 30px;
+}
+
+/* Search Box */
+.search-box {
+    margin: 15px 20px;
+    height: 55px;
+    border: 1px solid #d6d6d6;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.search-icon {
+    font-size: 28px;
+    color: #777;
+    margin-right: 12px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 17px;
+}
+
+.search-box input::placeholder {
+    color: #777;
+}
+
+/* Customer List */
+.customer-list {
+    padding: 5px 20px;
+}
+
+.customer-card {
+    min-height: 92px;
+    border: 1px solid #ddd;
+    border-radius: 13px;
+    margin-bottom: 12px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Avatar */
+.customer-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #eee8ff;
+    color: #4e2c9e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+/* Customer Information */
+.customer-info {
+    flex: 1;
+}
+
+.customer-info h2 {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.customer-info p {
+    font-size: 14px;
+    color: #444;
+}
+
+/* Status and Amount */
+.customer-status {
+    text-align: right;
+}
+
+.customer-status span {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.customer-status strong {
+    font-size: 16px;
+}
+
+/* Status Colors */
+.pending {
+    color: #f28c18;
+}
+
+.completed {
+    color: #239447;
+}
+
+.progress {
+    color: #1769c2;
+}
+
+/* Add Button */
+.add-btn {
+    position: fixed;
+    right: calc(50% - 210px);
+    bottom: 85px;
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+    background: #7046c6;
+    color: white;
+    font-size: 38px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    height: 72px;
+    background: white;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item {
+    text-align: center;
+    color: #555;
+    cursor: pointer;
+}
+
+.nav-item span {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 4px;
+}
+
+.nav-item p {
+    font-size: 13px;
+}
+
+.nav-item.active {
+    color: #6946c6;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 11px;
+    color: #777;
+}
+/* =========================
+   ADD CUSTOMER PAGE
+   ========================= */
+
+.form-container {
+    padding: 10px 22px 30px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #d6d6d6;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-size: 15px;
+    outline: none;
+    background: #fff;
+}
+
+.form-group textarea {
+    height: 90px;
+    padding-top: 14px;
+    resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #7046c6;
+    box-shadow: 0 0 0 2px #eee8ff;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.save-btn {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius: 12px;
+    background: #7046c6;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    box-shadow: 0 4px 10px rgba(112, 70, 198, 0.25);
+}
+
+.save-btn:hover {
+    background: #5d38aa;
+}
+/* =========================
+   CUSTOMER DETAILS PAGE
+========================= */
+
+.details-container {
+    padding: 10px 20px 90px;
+}
+
+/* Customer Profile */
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.06);
+    margin-bottom: 15px;
+}
+
+.large-avatar {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #eee8ff;
+    color: #5c38a8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.profile-card h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.profile-card p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+/* Information Cards */
+.info-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 17px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+}
+
+.info-card h3 {
+    font-size: 17px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 11px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row span {
+    color: #777;
+    font-size: 14px;
+}
+
+.info-row strong {
+    font-size: 14px;
+    text-align: right;
+}
+
+/* Section title */
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.section-title h3 {
+    margin-bottom: 0;
+}
+
+/* Due Amount */
+.info-row.due strong {
+    color: #e26a17;
+}
+
+/* Buttons */
+.status-btn,
+.new-order-btn {
+    width: 100%;
+    height: 46px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.status-btn {
+    border: none;
+    background: #7046c6;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.new-order-btn {
+    border: 1.5px solid #7046c6;
+    background: white;
+    color: #7046c6;
+}
+
+.status-btn:hover {
+    background: #5d38ae;
+}
+
+.new-order-btn:hover {
+    background: #f5f1ff;
+}
+/* =========================
+   ORDER STATUS PAGE
+========================= */
+
+.order-container {
+    padding: 10px 20px 95px;
+}
+
+/* Order Information */
+.order-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 17px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.order-header h2 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.order-header p {
+    font-size: 13px;
+    color: #777;
+}
+
+.order-info {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.order-info p {
+    font-size: 14px;
+    margin: 9px 0;
+    color: #555;
+}
+
+.order-info strong {
+    color: #222;
+}
+
+/* Timeline Card */
+.timeline-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-card > h2 {
+    font-size: 18px;
+    margin-bottom: 22px;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+}
+
+/* Vertical line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 17px;
+    top: 18px;
+    bottom: 18px;
+    width: 2px;
+    background: #ddd;
+}
+
+/* Timeline Item */
+.timeline-item {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    min-height: 75px;
+}
+
+/* Timeline Dot */
+.timeline-dot {
+    position: relative;
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    background: #eeeeee;
+    color: #777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Completed */
+.completed-step .timeline-dot {
+    background: #7046c6;
+    color: white;
+}
+
+/* Current Step */
+.active-step .timeline-dot {
+    background: #7046c6;
+    color: white;
+    box-shadow: 0 0 0 5px #eee8ff;
+}
+
+/* Timeline Text */
+.timeline-content {
+    padding-top: 2px;
+}
+
+.timeline-content h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.timeline-content p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.4;
+}
+
+/* Update Button */
+.update-btn {
+    width: 100%;
+    height: 47px;
+    border: none;
+    border-radius: 9px;
+    background: #7046c6;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background: #5d38ae;
+}
+/* Customer List & Card Alignment Fix */
+.customer-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.customer-card .avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #6c5ce7;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.customer-card .info {
+    flex-grow: 1;
+}
+
+.customer-card .info h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #2d3436;
+}
+
+.customer-card .info p {
+    margin: 4px 0 0 0;
+    font-size: 13px;
+    color: #636e72;
+}
+
+.customer-card .order-info {
+    text-align: right;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-pending {
+    background-color: #ffeaa7;
+    color: #d63031;
+}
+
+.status-completed {
+    background-color: #55efc4;
+    color: #00b894;
+}
+
+.customer-card .amount {
+    margin: 4px 0 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: #2d3436;
+}

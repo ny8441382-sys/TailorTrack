@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Order - TailorTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="top-header">
+    <button class="back-btn" onclick="history.back()">←</button>
+    <h1>Add New Order</h1>
+    <div></div>
+</header>
+
+<main class="details-container">
+
+    <section class="info-card">
+
+        <h3>Order Details</h3>
+
+        <div class="info-row">
+            <span>Customer</span>
+            <strong id="customerName">Customer</strong>
+        </div>
+
+        <div class="info-row">
+            <span>Clothing Type</span>
+            <select id="clothingType">
+                <option value="">Select</option>
+                <option value="Shirt & Pant">Shirt & Pant</option>
+                <option value="Shirt">Shirt</option>
+                <option value="Pant">Pant</option>
+                <option value="Kurta Pajama">Kurta Pajama</option>
+                <option value="Suit">Suit</option>
+                <option value="Blouse">Blouse</option>
+            </select>
+        </div>
+
+        <div class="info-row">
+            <span>Delivery Date</span>
+            <input type="date" id="deliveryDate">
+        </div>
+
+        <div class="info-row">
+            <span>Total Amount</span>
+            <input type="number" id="totalAmount" placeholder="Enter amount">
+        </div>
+
+        <div class="info-row">
+            <span>Paid Amount</span>
+            <input type="number" id="paidAmount" placeholder="Enter paid amount">
+        </div>
+
+        <button class="status-btn" onclick="addOrder()">
+            Add Order
+        </button>
+
+    </section>
+
+</main>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const name = localStorage.getItem("customerName");
+
+    if (name) {
+        document.getElementById("customerName").textContent = name;
+    }
+
+});
+
+
+function addOrder() {
+
+    const clothingType = document.getElementById("clothingType").value;
+    const deliveryDate = document.getElementById("deliveryDate").value;
+    const totalAmount = document.getElementById("totalAmount").value;
+    const paidAmount = document.getElementById("paidAmount").value;
+
+    if (clothingType === "" || deliveryDate === "" || totalAmount === "") {
+
+        alert("Please fill all required details.");
+
+        return;
+    }
+
+    const order = {
+        clothingType: clothingType,
+        deliveryDate: deliveryDate,
+        totalAmount: totalAmount,
+        paidAmount: paidAmount || 0,
+        status: "In Progress"
+    };
+
+    localStorage.setItem("currentOrder", JSON.stringify(order));
+
+    alert("Order added successfully!");
+
+    window.location.href = "customer-details.html";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Customer - TailorTrack</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .back-btn {
+            font-size: 26px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .back-btn:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Arrow Button -->
+        <div class="header-container">
+            <a href="index.html" class="back-btn" title="Back to Dashboard">&#8592;</a>
+            <h2 style="margin: 0;">Add New Customer</h2>
+        </div>
+
+        <!-- DIV container to prevent browser default reload/crash -->
+        <div class="form-container">
+            <div class="form-group">
+                <label for="cust-name">Customer Name *</label>
+                <input type="text" id="cust-name" placeholder="Enter customer name">
+            </div>
+
+            <div class="form-group">
+                <label for="cust-phone">Mobile Number *</label>
+                <input type="text" id="cust-phone" placeholder="Enter mobile number">
+            </div>
+
+            <div class="form-group">
+                <label for="cust-address">Address</label>
+                <input type="text" id="cust-address" placeholder="Enter customer address">
+            </div>
+
+            <div class="form-group">
+                <label for="cloth-type">Clothing Type</label>
+                <input type="text" id="cloth-type" placeholder="e.g. Shirt, Pant, Suit">
+            </div>
+
+            <div class="form-group">
+                <label for="delivery-date">Delivery Date</label>
+                <input type="date" id="delivery-date">
+            </div>
+
+            <div class="form-group">
+                <label for="total-amount">Total Amount (₹)</label>
+                <input type="number" id="total-amount" placeholder="0">
+            </div>
+
+            <div class="form-group">
+                <label for="advance-amount">Advance Amount (₹)</label>
+                <input type="number" id="advance-amount" placeholder="0">
+            </div>
+
+            <button type="button" id="save-btn" class="btn">Save Customer</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
